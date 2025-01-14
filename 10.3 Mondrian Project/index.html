@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+    /* 
+    Write your CSS here 
+    Gap Colour: #000
+    White: #F0F1EC
+    Red: #E72F24
+    Black: #232629
+    Blue: #004592
+    Yellow: #F9D01E
+
+    For dimensions, see dimensions.png image.
+    HINT: Remember you can't change the properties of grid lines.
+    But grid lines are transparent!
+    */
+    .mainContainer{
+      display: grid;
+      gap: 9px;
+      height: 748px;
+      width: 748px;
+      background-color: black;
+      grid-template-columns: 320px 198px 153px 50px;
+      grid-template-rows: 414px 130px 155px 22px;
+    }
+
+    .redBox{
+      background-color: red;
+    }
+
+    .blueBox{
+      background-color: blue;
+      border-bottom: 10px solid black;
+    }
+
+    .yellowBox{
+      background-color: yellow;
+    }
+
+    .blackBox{
+      background-color: black;
+    }
+
+    .whiteBoxTop{
+      background-color: white;
+      grid-column: span 3;
+    }
+
+    .whiteBoxBotLeft{
+      background-color: white;
+      grid-row: span 2;
+    }
+
+    .whiteBoxBotRight{
+      background-color: white;
+      grid-area: 2 /2 /4 /4;
+    }
+
+    .whiteBoxExtraBot{
+      background-color: white;
+    }
+
+    .whiteBoxExtraRight{
+      background-color: white;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Write your HTML here -->
+   <div class="mainContainer">
+    <div class="redBox"></div>
+    <div class="whiteBoxTop"></div>
+    <div class="whiteBoxBotLeft"></div>
+    <div class="whiteBoxBotRight"></div>
+    <div class="blueBox"></div>
+    <div class="whiteBoxExtraBot"></div>
+    <div class="whiteBoxExtraRight"></div>
+    <div class="yellowBox"></div>
+    <div class="blackBox"></div>
+   </div>
+</body>
+
+</html>
