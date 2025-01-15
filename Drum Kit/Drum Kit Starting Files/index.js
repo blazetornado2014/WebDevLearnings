@@ -1,10 +1,12 @@
 document.querySelectorAll("button").forEach(button => {
-    button.addEventListener("click", handleClick);
+    button.addEventListener("click", function(){
+        var buttonInnerHTML = this.innerHTML;
+        handleClick(buttonInnerHTML);
+        buttonAnimation(buttonInnerHTML);
+    });
 });
+function handleClick(buttonInnerHTML){
 
-function handleClick(){
-
-var buttonInnerHTML = this.innerHTML;
 switch (buttonInnerHTML){
     case "w": 
         var audio = new Audio("./sounds/crash.mp3");
@@ -90,4 +92,13 @@ function makeSound(event){
         default: 
             console.log(key);
         }
+}
+
+function buttonAnimation(curKey){
+    var activeButton = document.querySelector("." + curKey)
+    activeButton.classList.add("pressed");
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+
+    }, 100);
 }
